@@ -1,0 +1,57 @@
+[
+  {
+    "name": "iPhone 13 Pro",
+    "manufacturer": "Apple",
+    "description": "A dramatically more powerful camera system. A display so responsive, every interaction feels new again. The world’s fastest smartphone chip. Exceptional durability. And a huge leap in battery life. Let’s Pro.",
+    "color": "Black",
+    "price": "1159",
+    "imageFileName": "https://muynuevo.com/wp-content/uploads/IPHONE-13-PRO-NEGRO.png",
+    "screen": "6.1 inch OLED",
+    "processor": "A15 Bionic",
+    "ram": "6"
+  },
+  {
+    "name": "Google Pixel 6 Pro",
+    "manufacturer": "Google",
+    "description": "The best of Google, built around you.",
+    "color": "Black",
+    "price": "899",
+    "imageFileName": "https://fscl01.fonpit.de/devices/68/2068-w320h320.png",
+    "screen": "6.7 inch QHD+ OLED",
+    "processor": "Google Tensor · Titan M2™ security coprocessor",
+    "ram": "12"
+  },
+  {
+    "name": "Galaxy S21 Ultra 5G",
+    "manufacturer": "Samsung",
+    "description": "Épico. En todos los sentidos. Presentamos Galaxy S21 Ultra 5G. Diseñado con una cámara con corte de contorno exclusiva que marca una revolución en la fotografía, te permite capturar vídeo en 8K con calidad de vídeo y fotografías impresionantes, todo a la vez. Y con el chipset más rápido de Galaxy, el cristal más resistente, 5G y una batería para todo el día, Ultra hace honor a su nombre sin inmutarse.",
+    "color": "Black",
+    "price": "1099",
+    "imageFileName": "https://static.carrefour.es/hd_510x_/imagenes/products/88060/90887/307/8806090887307/imagenGrande1.jpg",
+    "screen": "6,8 inch Dynamic AMOLED 2x WQHD+",
+    "processor": "Exynos 2100",
+    "ram": "12"
+  },
+  {
+    "name": "Xiaomi 11T Pro",
+    "manufacturer": "Xiaomi",
+    "description": "Xiaomi 11T Pro empowers you to turn the cinematic moments in your everyday life into Cinemagic. This device offers the ultimate cinematic experience from stunning photography, vibrant visuals to studio-grade videography - perfect for sharing and experiencing the stories that matter to you. ",
+    "color": "Black",
+    "price": "649",
+    "imageFileName": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTS_cP3UVfD5AkuHltwb0oO89gCGMQW_Wht1DoMraCOMT8VlmtQRg&usqp=CAc",
+    "screen": "6.67 inch AMOLED DotDisplay",
+    "processor": "Qualcomm®️ Snapdragon™️ 888",
+    "ram": "8"
+  },
+  {
+    "name": "OnePlus 9 Pro",
+    "manufacturer": "OnePlus",
+    "description": "Your best shot.",
+    "color": "Green",
+    "price": "909",
+    "imageFileName": "https://oasis.opstatics.com/content/dam/oasis/page/2021/9-series/spec-image/9-pro/Pine%20green-gallery..png",
+    "screen": "6.7 inch AMOLED 120 Hz",
+    "processor": "Qualcomm® Snapdragon™ 888",
+    "ram": "8"
+  }
+]
