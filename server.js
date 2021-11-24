@@ -37,7 +37,10 @@ app.use(express.urlencoded({ extended: true }));
 <-------------------- GET Requests -------------------->
 */
 
-app.get("/", (req, res) => {});
+app.get("/", (req, res) => {
+  let data = convertStringToJSON();
+  res.send(data);
+});
 
 function convertStringToJSON() {
   let read = fs.readFileSync(dbClientesPath, (err) => {});
