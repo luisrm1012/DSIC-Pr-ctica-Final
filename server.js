@@ -14,19 +14,19 @@ const dbRestaurantesPath = "restaurantes.json";
 */
 
 //Allow react app use fetch API to consume my Node API
-app.use(function (req, res, next) {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET, POST, OPTIONS, PUT, PATCH, DELETE"
-  );
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "X-Requested-With,content-type"
-  );
-  res.setHeader("Access-Control-Allow-Credentials", false);
+app.use(function(req, res, next) {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader(
+        "Access-Control-Allow-Methods",
+        "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+    );
+    res.setHeader(
+        "Access-Control-Allow-Headers",
+        "X-Requested-With,content-type"
+    );
+    res.setHeader("Access-Control-Allow-Credentials", false);
 
-  next();
+    next();
 });
 
 app.use(express.json());
@@ -38,17 +38,30 @@ app.use(express.urlencoded({ extended: true }));
 */
 
 app.get("/", (req, res) => {
-  let data = convertStringToJSON();
-  res.send(data);
+    let data = convertStringToJSON();
+    let result = null;
+
+    for (let i = 0; i < data.length; i++) {
+        if (data[i].name == "" && data[i].password == "") {
+            result = data[i];
+        }
+    }
+
+    if (result == null) {
+        //No existe ese usuario
+    } else {
+        //Iniciar sesión
+    }
+    res.send(data);
 });
 
 function convertStringToJSON() {
-  let read = fs.readFileSync(dbClientesPath, (err) => {});
-  let result = JSON.parse(read); //String converted into a JSON Object
-  return result;
+    let read = fs.readFileSync(dbClientesPath, (err) => {});
+    let result = JSON.parse(read); //String converted into a JSON Object
+    return result;
 }
 
 function convertJsonToString(object) {
-  let toWrite = JSON.stringify(object, null, "\t");
-  fs.writeFileSync(dbClientesPath, toWrite, (err) => {});
+    let toWrite = JSON.stringify(object, null, "\t");
+    fs.writeFileSync(dbClientesPath, toWrite, (err) => {});
 }
