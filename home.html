@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,11 +9,17 @@
     <script src="app.js" async></script>
     <title>Deli-Home</title>
 </head>
+
 <body onload="getUserName()">
     <nav>
         <img id="logo" src="/images/logo_delihome.png" alt="Deli-Home_logo">
         <div id="header-right-container">
             <p id="hi-user"> Hola, Usuario!</p>
+            <br>
+            <a id="ver-perfil" href="#" onclick="getProfileOnType()">
+                <p> Ver Perfil</p>
+            </a>
+
         </div>
     </nav>
 
@@ -24,4 +31,5 @@
 
     </div>
 </body>
+
 </html>

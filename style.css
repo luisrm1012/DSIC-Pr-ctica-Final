@@ -13,7 +13,7 @@
 
 nav {
     background-color: #BEE9E8;
-    width: 100%;
+    width: auto;
     height: 150px;
     display: flex;
     flex-direction: row;
@@ -30,7 +30,7 @@ nav #header-right-container {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: 20%;
+    margin-left: 15%;
     width: fit-content;
 }
 
@@ -38,6 +38,7 @@ nav #header-right-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 100%;
 }
 
 #index-text-container {
@@ -85,13 +86,13 @@ button {
     flex-direction: row;
     align-items: flex-end;
     justify-content: flex-start;
-    padding-left: 10rem;
 }
 
 #navigation-buttons-container a {
     font-size: 2rem;
     text-decoration: none;
     color: #015bab;
+    padding-left: 5rem;
 }
 
 .login-title {
@@ -160,7 +161,13 @@ button {
 /*  Home    */
 
 #hi-user {
-    font-size: 3rem;
+    font-size: 2.4rem;
     color: #015bab;
     font-weight: 900;
+}
+
+#ver-perfil {
+    text-decoration: none;
+    color: #015bab;
+    font-size: 3rem;
 }

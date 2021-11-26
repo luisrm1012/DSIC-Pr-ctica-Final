@@ -1,7 +1,7 @@
-[
-  {
-    "tipo": "Restaurante",
-		"email": "rest",
-		"password": "456"
-	}
+[{
+        "tipo": "Restaurante",
+        "email": "rest",
+        "password": "456"
+    }
+
 ]

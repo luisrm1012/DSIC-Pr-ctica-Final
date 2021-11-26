@@ -7,5 +7,35 @@
 	{
 		"email": "cliente@cliente.com",
 		"password": "123"
+	},
+	{
+		"tipo": "Cliente",
+		"name": "Ricardo",
+		"lname": "Ricardo",
+		"email": "ricardo@gmail.com",
+		"password": "123",
+		"tlf": "999999999",
+		"address": "calle",
+		"city": "madrid",
+		"state": "madrid",
+		"zipcode": "99999",
+		"creditcard": "9999999999999999",
+		"ccdate": "9999",
+		"cvv": "999"
+	},
+	{
+		"tipo": "Cliente",
+		"name": "Alex",
+		"lname": "Alex",
+		"email": "alex@gmail.com",
+		"password": "123",
+		"tlf": "123456789",
+		"address": "calle 1",
+		"city": "Madrid",
+		"state": "Madrid",
+		"zipcode": "88888",
+		"creditcard": "123123",
+		"ccdate": "123",
+		"cvv": "123"
 	}
 ]
