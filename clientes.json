@@ -1,14 +1,11 @@
 [
 	{
-		"email": "res",
+		"tipo": "Cliente",
+		"email": "cliente",
 		"password": "123"
 	},
 	{
 		"email": "cliente@cliente.com",
 		"password": "123"
-	},
-	{},
-	{},
-	{},
-	{}
+	}
 ]

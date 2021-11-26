@@ -40,10 +40,18 @@ app.use(express.urlencoded({ extended: true }));
 <-------------------- GET Requests -------------------->
 */
 
-app.get("/:email&:password", (req, res) => {
-  let data = convertStringToJSON();
+app.get("/:email&:password&:type", (req, res) => {
+  let data;
   let email = req.params.email;
   let password = req.params.password;
+  let type = req.params.type;
+
+  if (type == "cliente") {
+    data = convertStringToJSON(dbClientesPath);
+  } else if (type == "restaurante") {
+    data = convertStringToJSON(dbRestaurantesPath);
+  }
+
   let result = JSON.parse("{}");
 
   for (let i = 0; i < data.length; i++) {
@@ -58,7 +66,6 @@ app.get("/:email&:password", (req, res) => {
 });
 
 app.get("/loggedUser", (req, res) => {
-
   res.send(loggedUser);
 });
 
@@ -67,10 +74,19 @@ app.get("/loggedUser", (req, res) => {
 */
 
 app.post("/newCliente", (req, res) => {
-  console.log(req.body)
-  let data = convertStringToJSON();
+  console.log(req.body);
+  let data = convertStringToJSON(dbClientesPath);
   data.push(req.body);
-  convertJsonToString(data);
+  convertJsonToString(dbClientesPath, data);
+
+  res.send(req.body);
+});
+
+app.post("/newRestaurante", (req, res) => {
+  console.log(req.body);
+  let data = convertStringToJSON(dbRestaurantesPath);
+  data.push(req.body);
+  convertJsonToString(dbRestaurantesPath, data);
 
   res.send(req.body);
 });
@@ -79,13 +95,13 @@ app.post("/newCliente", (req, res) => {
 <-------------------- Extra Functions -------------------->
 */
 
-function convertStringToJSON() {
-    let read = fs.readFileSync(dbClientesPath, (err) => {});
-    let result = JSON.parse(read); //String converted into a JSON Object
-    return result;
+function convertStringToJSON(db) {
+  let read = fs.readFileSync(db, (err) => {});
+  let result = JSON.parse(read); //String converted into a JSON Object
+  return result;
 }
 
-function convertJsonToString(object) {
-    let toWrite = JSON.stringify(object, null, "\t");
-    fs.writeFileSync(dbClientesPath, toWrite, (err) => {});
+function convertJsonToString(db, object) {
+  let toWrite = JSON.stringify(object, null, "\t");
+  fs.writeFileSync(db, toWrite, (err) => {});
 }

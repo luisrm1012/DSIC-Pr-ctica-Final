@@ -113,6 +113,14 @@ button {
     font-size: 2rem;
 }
 
+#login #cliente {
+    margin: 1rem 0;
+}
+
+#login #restaurante {
+    margin: 0 0 2rem 0;
+}
+
 #login input {
     font-size: 2rem;
 }
