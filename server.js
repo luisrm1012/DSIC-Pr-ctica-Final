@@ -1,3 +1,4 @@
+const { Console } = require("console");
 var express = require("express");
 var fs = require("fs");
 
@@ -9,8 +10,6 @@ app.listen(PORT);
 const URL = "http://127.0.0.1:5500/";
 const dbClientesPath = "clientes.json";
 const dbRestaurantesPath = "restaurantes.json";
-
-var loggedUser;
 
 /*
 <-------------------- Middleware -------------------->
@@ -45,10 +44,11 @@ app.get("/:email&:password&:type", (req, res) => {
   let email = req.params.email;
   let password = req.params.password;
   let type = req.params.type;
+  console.log(type);
 
-  if (type == "cliente") {
+  if (type == "Cliente") {
     data = convertStringToJSON(dbClientesPath);
-  } else if (type == "restaurante") {
+  } else if (type == "Restaurante") {
     data = convertStringToJSON(dbRestaurantesPath);
   }
 
@@ -57,16 +57,10 @@ app.get("/:email&:password&:type", (req, res) => {
   for (let i = 0; i < data.length; i++) {
     if (data[i].email == email && data[i].password == password) {
       result = data[i];
-      loggedUser = data[i];
       break;
     }
   }
-
   res.send(result);
-});
-
-app.get("/loggedUser", (req, res) => {
-  res.send(loggedUser);
 });
 
 /*
@@ -92,16 +86,89 @@ app.post("/newRestaurante", (req, res) => {
 });
 
 /*
+<-------------------- PUT Requests -------------------->
+*/
+
+app.put("/updateCliente", (req, res) => {
+  let data = convertStringToJSON(dbClientesPath);
+
+  for (let i = 0; i < data.length; i++) {
+    if (
+      data[i].email == req.body.email &&
+      data[i].password == req.body.password
+    ) {
+      data[i] = req.body;
+      break;
+    }
+  }
+
+  convertJsonToString(dbClientesPath, data);
+
+  res.send(req.body);
+});
+
+app.put("/updateRestaurante", (req, res) => {
+  let data = convertStringToJSON(dbRestaurantesPath);
+
+  for (let i = 0; i < data.length; i++) {
+    if (
+      data[i].email == req.body.email &&
+      data[i].password == req.body.password
+    ) {
+      data[i] = req.body;
+      break;
+    }
+  }
+
+  convertJsonToString(dbRestaurantesPath, data);
+
+  res.send(req.body);
+});
+
+/*
+<-------------------- DELETE Requests --------------------> "/:email&:password&:type"
+*/
+
+app.delete("/delete=:email&:password&:type", (req, res) => {
+  let data;
+  let db;
+  let email = req.params.email;
+  let password = req.params.password;
+  let type = req.params.type;
+
+  if (type == "Cliente") {
+    data = convertStringToJSON(dbClientesPath);
+    db = dbClientesPath;
+  } else if (type == "Restaurante") {
+    data = convertStringToJSON(dbRestaurantesPath);
+    db = dbRestaurantesPath;
+  }
+
+  let result = JSON.parse("{}");
+
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].email == email && data[i].password == password) {
+      data.splice(i, 1);
+      break;
+    }
+  }
+  convertJsonToString(db, data);
+  res.send(result);
+});
+
+/*
 <-------------------- Extra Functions -------------------->
 */
 
 function convertStringToJSON(db) {
+  //This function reads the db, and turns it into a JSON
   let read = fs.readFileSync(db, (err) => {});
   let result = JSON.parse(read); //String converted into a JSON Object
   return result;
 }
 
 function convertJsonToString(db, object) {
+  //This fucntion gets as parameter an object (JSON db), turns it into a string and overwrites the db.
   let toWrite = JSON.stringify(object, null, "\t");
   fs.writeFileSync(db, toWrite, (err) => {});
 }

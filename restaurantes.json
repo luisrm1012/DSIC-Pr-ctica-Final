@@ -1,7 +1,13 @@
-[{
-        "tipo": "Restaurante",
-        "email": "rest",
-        "password": "456"
-    }
-
+[
+	{
+		"tipo": "Restaurante",
+		"name": "Restaurante1",
+		"email": "restaurante@gmail.com",
+		"password": "456",
+		"address": "Calle Restaurante 1",
+		"city": "Madrid",
+		"state": "Madrid",
+		"zipcode": "33333",
+		"cif": "B-54778912"
+	}
 ]

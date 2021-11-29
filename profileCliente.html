@@ -25,7 +25,7 @@
 
     <div id="root">
 
-        <form class="user-profile" id="data-cliente">
+        <form class="user-profile" id="data-cliente" onsubmit="updateCliente(event)">
             <label for="tipo">Tipo:</label>
             <br>
             <input type="text" name="tipo" value="Cliente" readonly>
@@ -91,8 +91,9 @@
             <input type="text" name="cvv">
             <br>
 
-            <button id="btn-login">Regístrate</button>
+            <button class="btn-user-profile">Guardar Cambios</button>
         </form>
+        <button class="btn-delete-user" onclick="deleteUser()" >Darse de baja</button>
 
     </div>
 </body>
