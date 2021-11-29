@@ -171,3 +171,15 @@ button {
     color: #015bab;
     font-size: 3rem;
 }
+
+
+/*  User Profile    */
+
+.user-profile label {
+    font-size: 2rem;
+}
+
+.user-profile input {
+    width: 40rem;
+    font-size: 2rem;
+}

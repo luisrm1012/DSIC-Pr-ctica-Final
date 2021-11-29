@@ -129,17 +129,30 @@ async function getUserData() {
         })
         .catch((error) => console.log("error", error));
 
-    let form = document.getElementById("data-cliente");
-    form.name.value = myData.name;
-    form.lname.value = myData.lname;
-    form.email.value = myData.email;
-    form.password.value = myData.password;
-    form.tlf.value = myData.tlf;
-    form.address.value = myData.address;
-    form.city.value = myData.city;
-    form.state.value = myData.state;
-    form.zipcode.value = myData.zipcode;
-    form.creditcard.value = myData.creditcard;
-    form.ccdate.value = myData.ccdate;
-    form.cvv.value = myData.cvv;
+    let form = document.getElementsByClassName("user-Profile");
+
+    if (myData.tipo == "Cliente") {
+      form.name.value = myData.name;
+      form.lname.value = myData.lname;
+      form.email.value = myData.email;
+      form.password.value = myData.password;
+      form.tlf.value = myData.tlf;
+      form.address.value = myData.address;
+      form.city.value = myData.city;
+      form.state.value = myData.state;
+      form.zipcode.value = myData.zipcode;
+      form.creditcard.value = myData.creditcard;
+      form.ccdate.value = myData.ccdate;
+      form.cvv.value = myData.cvv;
+    } else if (myData.tipo == "Restaurante") {
+      form.name.value = myData.name;
+      form.email.value = myData.email;
+      form.password.value = myData.password;
+      form.address.value = myData.address;
+      form.city.value = myData.city;
+      form.state.value = myData.state;
+      form.zipcode.value = myData.zipcode;
+      form.cif.value = myData.cif;
+    }
+    
 }
