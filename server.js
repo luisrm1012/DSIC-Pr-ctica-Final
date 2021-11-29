@@ -44,7 +44,7 @@ app.get("/:email&:password&:type", (req, res) => {
   let email = req.params.email;
   let password = req.params.password;
   let type = req.params.type;
-  console.log(type);
+  let statusCode = 404;
 
   if (type == "Cliente") {
     data = convertStringToJSON(dbClientesPath);
@@ -52,15 +52,20 @@ app.get("/:email&:password&:type", (req, res) => {
     data = convertStringToJSON(dbRestaurantesPath);
   }
 
-  let result = JSON.parse("{}");
+  let result;
 
   for (let i = 0; i < data.length; i++) {
     if (data[i].email == email && data[i].password == password) {
       result = data[i];
+      statusCode = 200;
       break;
     }
   }
-  res.send(result);
+  if (statusCode == 404) {
+    res.sendStatus(statusCode);
+  } else if (statusCode == 200) {
+    res.send(result);
+  }
 });
 
 /*

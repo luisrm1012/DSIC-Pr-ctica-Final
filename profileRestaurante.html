@@ -46,7 +46,7 @@
 
         <div id="line"></div>
 
-        <form class="user-profile" id="data-restaurante">
+        <form class="user-profile" id="data-restaurante" onsubmit="updateRestaurante(event)">
             <label for="tipo">Tipo:</label>
             <br>
             <input type="text" name="tipo" value="Restaurante" readonly>
@@ -92,8 +92,9 @@
             <input type="text" name="cif">
             <br>
 
-            <button class="btn-user-profile" onclick="deleteUser()">Guardar Cambios</button>
+            <button class="btn-user-profile">Guardar Cambios</button>
         </form>
+        <button class="btn-delete-user" onclick="deleteUser()" >Darse de baja</button>
 
     </div>
 </body>

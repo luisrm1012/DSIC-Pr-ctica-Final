@@ -15,15 +15,29 @@ async function login(event) {
     let email = myObject.email;
     let password = myObject.password;
     let type = myObject.tipo;
-    let userData = null;
+    let userData; // = null;
+    let statusCode;
+
+    if (email == "" || password == "" || type == undefined) {
+      alert("Por favor rellena el formulario.");
+      return;
+    }
 
     await fetch(URL + email + "&" + password + "&" + type) //API URL
-        .then((response) => response.json())
-        .then((data) => {
-            userData = data;
-        })
-        .catch((error) => console.log("error", error));
+      .then((response) => {
+        statusCode = response.status;
+        return response.json();
+      })
+      .then((data) => {
+        userData = data;
+      })
+      .catch((error) => console.log("error", error));
 
+    if (statusCode == 404) {
+      alert("Este usario no existe");
+      return;
+    }
+    
     setLoggedUser(userData)
 
     //Write code before this
