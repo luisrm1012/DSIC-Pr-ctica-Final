@@ -181,35 +181,36 @@ function getProfileOnType() {
 //Gets the loggedUser info and fills the corresponging form on profileCliente or profileRestarurante
 function getUserData() {
     
+    getUserName();
+
     let myUser = getLoggedUser();
 
     let form;
 
     if (myUser.tipo == "Cliente") {
-        form = document.getElementById("data-cliente");
-        form.name.value = myUser.name;
-        form.lname.value = myUser.lname;
-        form.email.value = myUser.email;
-        form.password.value = myUser.password;
-        form.tlf.value = myUser.tlf;
-        form.address.value = myUser.address;
-        form.city.value = myUser.city;
-        form.state.value = myUser.state;
-        form.zipcode.value = myUser.zipcode;
-        form.creditcard.value = myUser.creditcard;
-        form.ccdate.value = myUser.ccdate;
-        form.cvv.value = myUser.cvv;
-        
+      form = document.getElementById("data-cliente");
+      form.name.value = myUser.name;
+      form.lname.value = myUser.lname;
+      form.email.value = myUser.email;
+      form.password.value = myUser.password;
+      form.tlf.value = myUser.tlf;
+      form.address.value = myUser.address;
+      form.city.value = myUser.city;
+      form.state.value = myUser.state;
+      form.zipcode.value = myUser.zipcode;
+      form.creditcard.value = myUser.creditcard;
+      form.ccdate.value = myUser.ccdate;
+      form.cvv.value = myUser.cvv;
     } else if (myUser.tipo == "Restaurante") {
-        form = document.getElementById("data-restaurante");
-        form.name.value = myUser.name;
-        form.email.value = myUser.email;
-        form.password.value = myUser.password;
-        form.address.value = myUser.address;
-        form.city.value = myUser.city;
-        form.state.value = myUser.state;
-        form.zipcode.value = myUser.zipcode;
-        form.cif.value = myUser.cif;
+      form = document.getElementById("data-restaurante");
+      form.name.value = myUser.name;
+      form.email.value = myUser.email;
+      form.password.value = myUser.password;
+      form.address.value = myUser.address;
+      form.city.value = myUser.city;
+      form.state.value = myUser.state;
+      form.zipcode.value = myUser.zipcode;
+      form.cif.value = myUser.cif;
     }
     
 }

@@ -14,16 +14,37 @@
     <nav>
         <img id="logo" src="/images/logo_delihome.png" alt="Deli-Home_logo">
         <div id="header-right-container">
-            <p id="hi-user"> Hola, Usuario!</p>
-            <br>
-            <a id="ver-perfil" href="profileCliente.html">
-                <p> Ver Perfil</p>
-            </a>
+            
+            <div class="hi-user-container">
+                <p id="hi-user"> Hola, Usuario!</p>
+            </div>
+            <div class="profile-options-container">
+                <a id="my-profile" href="#" onclick="getProfileOnType()">
+                    <p> Ver Perfil</p>
+                </a>
+
+                <a href="/orders.html" >
+                    <p>Mis Pedidos</p>
+                </a>
+                
+                <a id="logout" href="#" onclick="logout()">
+                    <p> Cerrar Sesión</p>
+                </a>
+            </div>
 
         </div>
     </nav>
 
     <div id="root">
+
+        <div id="navigation-buttons-container">
+            <a href="/home.html">Volver a inicio</a>
+        </div>
+
+        <h3 class="user-profile-title"> Mi Perfil
+        </h3>
+
+        <div id="line"></div>
 
         <form class="user-profile" id="data-restaurante">
             <label for="tipo">Tipo:</label>

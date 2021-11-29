@@ -153,18 +153,40 @@
     }
     /*  Home    */
     
+    .hi-user-container {}
+    
     #hi-user {
         font-size: 2.4rem;
         color: #015bab;
         font-weight: 900;
     }
     
-    #ver-perfil {
+    .profile-options-container {
+        display: flex;
+        flex-direction: row;
+        margin-top: 1rem;
+    }
+    
+    .profile-options-container>a {
         text-decoration: none;
         color: #015bab;
         font-size: 3rem;
+        border-right: 2px solid #015bab;
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+    
+    .profile-options-container>a:last-child {
+        border-right: none;
+        padding-right: 0;
     }
     /*  User Profile    */
+    
+    .user-profile-title {
+        font-size: 7rem;
+        font-weight: 900;
+        color: #015bab;
+    }
     
     .user-profile label {
         font-size: 2rem;
@@ -176,10 +198,51 @@
     }
     
     .btn-user-profile {
-        margin: 2rem 0 0 1.5rem;
+        margin: 2rem 0 0;
     }
     
     .btn-delete-user {
         background-color: rgb(206, 57, 57);
-        margin: 2rem 0 0 0;
+        margin: 2rem 20rem 0 0;
+    }
+    /*  Orders    */
+    
+    .order-container {
+        width: 70rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 1.4rem;
+        border: 2px solid #015bab;
+        margin: 2rem 0 2rem 0;
+    }
+    
+    .order-title {
+        color: #015bab;
+        font-weight: 900;
+        font-size: 5rem;
+        margin-left: 7rem;
+    }
+    
+    .order-label-container {
+        display: flex;
+        flex: row;
+        width: fit-content;
+        margin: 1rem 0 0 7rem;
+    }
+    
+    .order-label {
+        color: black;
+        font-weight: 900;
+        font-size: 3rem;
+    }
+    
+    .order-label-value {
+        color: black;
+        font-size: 3rem;
+        margin-left: 1rem;
+    }
+    
+    .order-container>button {
+        margin: 1rem 0 0 8rem;
     }

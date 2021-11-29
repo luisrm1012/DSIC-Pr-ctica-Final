@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" async></script>
+    <title>Deli-Home</title>
+</head>
+
+<body onload="getUserName()">
+    <nav>
+        <img id="logo" src="/images/logo_delihome.png" alt="Deli-Home_logo">
+        <div id="header-right-container">
+
+            <div class="hi-user-container">
+                <p id="hi-user"> Hola, Usuario!</p>
+            </div>
+            <div class="profile-options-container">
+                <a id="my-profile" href="#" onclick="getProfileOnType()">
+                    <p> Ver Perfil</p>
+                </a>
+
+                <a href="/orders.html" >
+                    <p>Mis Pedidos</p>
+                </a>
+
+                <a id="logout" href="#" onclick="logout()">
+                    <p>Cerrar Sesión</p>
+                </a>
+            </div>
+
+        </div>
+    </nav>
+
+    <div id="root">
+
+        <div id="navigation-buttons-container">
+            <a href="/home.html">Volver a inicio</a>
+        </div>
+
+        <h3 class="user-profile-title"> Mis Pedidos</h3>
+
+        <div id="line"></div>
+
+        <div class="order-container">
+            <h4 class="order-title">Pedido 1</h4>
+            <div class="order-label-container">
+                <p class="order-label">Pedido a:</p>
+                <p class="order-label-value">Restaurante1</p>
+            </div>
+            <div class="order-label-container">
+                <p class="order-label">Estado:</p>
+                <p class="order-label-value">Entregado el 14:55h 10/12/2021</p>
+            </div>
+            <button onclick="alert('Se ha puesto una reclamación sobre el pedido.')">Reclamar</button>
+        </div>
+
+        <div class="order-container">
+            <h4 class="order-title">Pedido 2</h4>
+            <div class="order-label-container">
+                <p class="order-label">Pedido a:</p>
+                <p class="order-label-value">Restaurante2</p>
+            </div>
+            <div class="order-label-container">
+                <p class="order-label">Estado:</p>
+                <p class="order-label-value">En proceso</p>
+            </div>
+            <button onclick="alert('Se ha puesto una reclamación sobre el pedido.')">Reclamar</button>
+        </div>
+
+    </div>
+</body>
+
+</html>
