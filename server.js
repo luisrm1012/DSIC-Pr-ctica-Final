@@ -1,7 +1,7 @@
 var express = require("express");
 var fs = require("fs");
 
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 
 const app = express();
 app.listen(PORT);
@@ -36,6 +36,10 @@ app.use(express.urlencoded({ extended: true }));
 /*
 <-------------------- GET Requests -------------------->
 */
+
+app.get("/", (req, res) => {
+  res.send("DSIC Práctica Final Server");
+});
 
 app.get("/:email&:password", (req, res) => {
   let email = req.params.email;
