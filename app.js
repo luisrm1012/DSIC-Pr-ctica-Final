@@ -40,13 +40,13 @@ async function login(event) {
 
   //Write code before this
   if (userData.email == email) {
-    window.location.href = "home.html";
+    window.location.href = "./home.html";
   }
 }
 
 function logout() {
   sessionStorage.clear();
-  window.location.href = "login.html";
+  window.location.href = "./login.html";
 }
 
 async function registerCliente(event) {
@@ -72,7 +72,7 @@ async function registerCliente(event) {
     })
     .catch((error) => console.log("error", error));
 
-  window.location.href = "login.html";
+  window.location.href = "./login.html";
 }
 
 async function updateCliente(event) {
@@ -99,7 +99,7 @@ async function updateCliente(event) {
     .catch((error) => console.log("error", error));
 
   setLoggedUser(myObject);
-  window.location.href = "profile.html";
+  window.location.href = "./profile.html";
 }
 
 /*
