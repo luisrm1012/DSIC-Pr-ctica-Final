@@ -1,4 +1,3 @@
-const { Console } = require("console");
 var express = require("express");
 var fs = require("fs");
 
@@ -9,7 +8,6 @@ app.listen(PORT);
 
 const URL = "http://127.0.0.1:5500/";
 const dbClientesPath = "clientes.json";
-const dbRestaurantesPath = "restaurantes.json";
 
 /*
 <-------------------- Middleware -------------------->
@@ -39,18 +37,11 @@ app.use(express.urlencoded({ extended: true }));
 <-------------------- GET Requests -------------------->
 */
 
-app.get("/:email&:password&:type", (req, res) => {
-  let data;
+app.get("/:email&:password", (req, res) => {
   let email = req.params.email;
   let password = req.params.password;
-  let type = req.params.type;
   let statusCode = 404;
-
-  if (type == "Cliente") {
-    data = convertStringToJSON(dbClientesPath);
-  } else if (type == "Restaurante") {
-    data = convertStringToJSON(dbRestaurantesPath);
-  }
+  let data = convertStringToJSON(dbClientesPath);
 
   let result;
 
@@ -81,15 +72,6 @@ app.post("/newCliente", (req, res) => {
   res.send(req.body);
 });
 
-app.post("/newRestaurante", (req, res) => {
-  console.log(req.body);
-  let data = convertStringToJSON(dbRestaurantesPath);
-  data.push(req.body);
-  convertJsonToString(dbRestaurantesPath, data);
-
-  res.send(req.body);
-});
-
 /*
 <-------------------- PUT Requests -------------------->
 */
@@ -98,10 +80,7 @@ app.put("/updateCliente", (req, res) => {
   let data = convertStringToJSON(dbClientesPath);
 
   for (let i = 0; i < data.length; i++) {
-    if (
-      data[i].email == req.body.email &&
-      data[i].password == req.body.password
-    ) {
+    if (data[i].email == req.body.email) {
       data[i] = req.body;
       break;
     }
@@ -112,42 +91,15 @@ app.put("/updateCliente", (req, res) => {
   res.send(req.body);
 });
 
-app.put("/updateRestaurante", (req, res) => {
-  let data = convertStringToJSON(dbRestaurantesPath);
-
-  for (let i = 0; i < data.length; i++) {
-    if (
-      data[i].email == req.body.email &&
-      data[i].password == req.body.password
-    ) {
-      data[i] = req.body;
-      break;
-    }
-  }
-
-  convertJsonToString(dbRestaurantesPath, data);
-
-  res.send(req.body);
-});
-
 /*
 <-------------------- DELETE Requests --------------------> "/:email&:password&:type"
 */
 
-app.delete("/delete=:email&:password&:type", (req, res) => {
-  let data;
-  let db;
+app.delete("/delete=:email&:password", (req, res) => {
   let email = req.params.email;
   let password = req.params.password;
-  let type = req.params.type;
-
-  if (type == "Cliente") {
-    data = convertStringToJSON(dbClientesPath);
-    db = dbClientesPath;
-  } else if (type == "Restaurante") {
-    data = convertStringToJSON(dbRestaurantesPath);
-    db = dbRestaurantesPath;
-  }
+  let data = convertStringToJSON(dbClientesPath);
+  let db = dbClientesPath;
 
   let result = JSON.parse("{}");
 
@@ -158,7 +110,7 @@ app.delete("/delete=:email&:password&:type", (req, res) => {
     }
   }
   convertJsonToString(db, data);
-  res.send(result);
+  res.sendStatus(result);
 });
 
 /*

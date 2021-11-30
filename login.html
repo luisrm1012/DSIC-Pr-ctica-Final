@@ -23,19 +23,14 @@
         <div id="line"></div>
 
         <form id="login" onsubmit="login(event)">
-            <input type="radio" id="cliente" name="tipo" value="Cliente">
-            <label for="cliente">Cliente</label>
-            <br>
-            <input type="radio" id="restaurante" name="tipo" value="Restaurante">
-            <label for="restaurante">Restaurante</label>
-            <br>
             <label for="email">Email:</label>
             <br>
-            <input type="text" name="email">
+            <input type="text" name="email" required minlength="5" maxlength="50" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]*" title="Formato: nombre@organización.tipo">
             <br>
+
             <label for="password">Contraseña:</label>
             <br>
-            <input type="password" name="password">
+            <input type="password" name="password" required minlength="4" maxlength="25">
             <br>
             <button id="btn-login">Inicar Sesión</button>
         </form>
