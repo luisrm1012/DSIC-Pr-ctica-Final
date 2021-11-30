@@ -1,5 +1,4 @@
-const URL = "http://127.0.0.1:4000/";
-
+const URL = "https://dsic-practica-final.herokuapp.com/"; //"http://127.0.0.1:4000/";
 
 /*
 <-------------------- Cliente -------------------->
