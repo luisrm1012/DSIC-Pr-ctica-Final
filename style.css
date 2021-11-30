@@ -17,11 +17,11 @@
         display: flex;
         flex-direction: row;
         align-items: center;
+        justify-content: space-around;
     }
     
     nav #logo {
         height: 85%;
-        margin-left: 35%;
     }
     
     nav #header-right-container {
@@ -136,7 +136,7 @@
     #register-container {}
     
     #register-container button {
-        margin: 3rem 2rem 0 0;
+        margin: 3rem 2rem 5rem 0;
     }
     
     #register label {
@@ -203,7 +203,7 @@
     
     .btn-delete-user {
         background-color: rgb(206, 57, 57);
-        margin: 2rem 20rem 0 0;
+        margin: 2rem 20rem 5rem 0;
     }
     /*  Orders    */
     
