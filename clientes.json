@@ -1,30 +1,3 @@
 [
-	{
-		"name": "Cliente1",
-		"lname": "Apellido1",
-		"email": "cliente@gmail.com",
-		"password": "123",
-		"tlf": "123456789",
-		"address": "Calle Cliente 1",
-		"city": "Madrid",
-		"state": "Madrid",
-		"zipcode": "22222",
-		"creditcard": "1234123412341234",
-		"ccdate": "0121",
-		"cvv": "111"
-	},
-	{
-		"name": "Luis",
-		"lname": "Rasquin",
-		"email": "luis@gmail.com",
-		"password": "casa1",
-		"tlf": "789789789",
-		"address": "Calle Luis 2",
-		"city": "Madrid",
-		"state": "Madrid",
-		"zipcode": "22222",
-		"creditcard": "4564564564564564",
-		"ccdate": "10/24",
-		"cvv": "234"
-	}
+
 ]
