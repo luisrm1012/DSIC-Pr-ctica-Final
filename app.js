@@ -56,6 +56,24 @@ async function registerCliente(event) {
 
   const myObject = Object.fromEntries(data.entries());
 
+  let email = myObject.email;
+
+  //To verify the email already exists
+  await fetch(URL + "exists=" + email) //API URL
+    .then((response) => {
+      statusCode = response.status;
+      return response.json();
+    })
+    .then((data) => {
+      userData = data;
+    })
+    .catch((error) => console.log("error", error));
+
+  if (statusCode == 404) {
+    alert("Ya existe un usuario con " + email);
+    return;
+  }
+
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
 

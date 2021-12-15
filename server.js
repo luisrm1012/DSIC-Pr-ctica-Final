@@ -63,6 +63,24 @@ app.get("/:email&:password", (req, res) => {
   }
 });
 
+app.get("/exists=:email", (req, res) => {
+  let email = req.params.email;
+  let statusCode = 404;
+  let data = convertStringToJSON(dbClientesPath);
+
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].email == email) {
+      statusCode = 200;
+      break;
+    }
+  }
+  if (statusCode == 404) {
+    res.sendStatus(statusCode);
+  } else if (statusCode == 200) {
+    res.sendStatus(statusCode);
+  }
+});
+
 /*
 <-------------------- POST Requests -------------------->
 */
