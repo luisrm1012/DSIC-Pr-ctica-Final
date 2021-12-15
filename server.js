@@ -43,7 +43,7 @@ app.get("/", (req, res) => {
 
 app.get("/db", (req, res) => {
   let result = convertStringToJSON(dbClientesPath);
-  res.send(result);
+  res.send(JSON.stringify(result, null, "\t"));
 });
 
 app.get("/:email&:password", (req, res) => {
