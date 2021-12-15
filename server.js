@@ -37,6 +37,11 @@ app.use(express.urlencoded({ extended: true }));
 <-------------------- GET Requests -------------------->
 */
 
+app.get("/db", (req, res) => {
+  let result = convertStringToJSON(dbClientesPath);
+  res.send(result);
+});
+
 app.get("/", (req, res) => {
   res.send("DSIC Práctica Final Server");
 });
